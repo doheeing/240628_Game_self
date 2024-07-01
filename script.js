@@ -3,8 +3,9 @@ let inputArea = document.getElementById("inputArea");
 let playButton = document.getElementById("playButton");
 let resetButton = document.getElementById("resetButton");
 let chanceArea = document.getElementById("chanceArea");
+let answerArea = document.getElementById("answerArea");
 let randomNum = 0;
-let chances = 5;
+let chances = 3;
 let answers = [];
 
 //각 버튼을 누르면 event가 생기게 함
@@ -18,6 +19,7 @@ inputArea.addEventListener("focus", function(){
 function computerNum(){
     randomNum = Math.floor(Math.random()*100)+1;
     console.log("정답 : ", randomNum);
+    answerArea.textContent = `정답 : ${randomNum}`;
 }
 
 function play(){
@@ -64,8 +66,8 @@ function play(){
 }
 
 function reset(){
-    let chances = 5;
-    chanceArea.textContent = "남은 기회 : 5번"
+    let chances = 3;
+    chanceArea.textContent = "남은 기회 : 3번"
     resetButton.textContent = "reset"
     resultArea.textContent = "UP or DOWN"
     computerNum();
